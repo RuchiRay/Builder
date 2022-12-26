@@ -2,14 +2,8 @@ import React,{useState} from 'react'
 import { Draggable } from './Draggable'
 import { DragOverlay} from '@dnd-kit/core';
 import { act } from 'react-dom/test-utils';
-export const Sidebar = ({activeId}) => {
-    console.log('displacy active id',activeId);
-    const [components, setComponents] = useState([
-        { id: 1, label: "Title", component: "input" },
-        { id: 2, label: "Line Chart", component: "Line Chart" },
-        { id: 3, label: "Bar Chart", component: "Bar Chart" },
-        { id: 4, label: "Table", component: "Table" },
-      ]);
+export const Sidebar = ({activeId,components}) => {
+    
      const getComponent = (id)=>{
         const ele = components.find((item)=>{
             return item.id===id
