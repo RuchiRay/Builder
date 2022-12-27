@@ -8,7 +8,7 @@ export const Droppable = () => {
     id: "droppable",
   });
   const style = {
-    backgroundColor: isOver ? "green" : undefined,
+    backgroundColor: isOver ? "#cbf3f0" : undefined,
   };
   const layout = JSON.parse(localStorage.getItem('grid-layout'))
   const handleLayoutChange = (layout, layouts) => {
