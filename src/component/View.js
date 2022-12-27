@@ -21,7 +21,7 @@ const {dropped} = useGlobalContext()
       >
      {
       dropped.map((item,index)=>{
-        return <div data-grid ={{...layout[index],static:true}} className='bg-red-300' key={item.id}>{item.label}</div>
+        return <div data-grid ={{...layout[index],static:true}}  key={item.id}>{item.component}</div>
       })
      }
       </GridLayout>

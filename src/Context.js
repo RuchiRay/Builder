@@ -7,13 +7,14 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [components, setComponents] = useState([
     { id: 1, label: "Title", component: <Input/> },
-    { id: 2, label: "Line Chart", component: "Line Chart" },
-    { id: 3, label: "Bar Chart", component: "Bar Chart" },
+    { id: 2, label: "Line Chart", component: <LineChart/> },
+    { id: 3, label: "Bar Chart", component: <BarChart/> },
     { id: 4, label: "Table", component: "Table" },
   ]);
   const [dropped, setDropped] = useState([]);
+  const [title, setTitle] = useState('')
   return (
-    <AppContext.Provider value={{ components, setComponents,dropped,setDropped }}>
+    <AppContext.Provider value={{ components, setComponents,dropped,setDropped ,title,setTitle}}>
       {children}
     </AppContext.Provider>
   );
