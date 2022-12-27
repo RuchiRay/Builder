@@ -34,7 +34,7 @@ export const Droppable = () => {
                 <div className="bg-white  w-full mb-8" key={item.id}>
                   {item.component}
                 </div>
-              );
+              )
             })
           : ""}
       </GridLayout>

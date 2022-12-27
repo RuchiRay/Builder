@@ -54,7 +54,7 @@ export const data = {
 export const BarChart = () => {
   return (
     <div className="w-full h-full">
-      <Bar options={options} data={data} />;
+      <Bar options={options} data={data} />
     </div>
-  );
+  )
 };
