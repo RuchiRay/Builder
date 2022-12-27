@@ -5,8 +5,7 @@ import GridLayout from "react-grid-layout";
 export const View = () => {
  
  const layout = JSON.parse(localStorage.getItem('grid-layout'))
- const dropped = JSON.parse(localStorage.getItem('dropped'))
- console.log(dropped);
+const {dropped} = useGlobalContext()
   
   return (
     <GridLayout

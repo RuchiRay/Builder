@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import { Draggable } from './Draggable'
 import { DragOverlay} from '@dnd-kit/core';
-import { act } from 'react-dom/test-utils';
 export const Sidebar = ({activeId,components}) => {
     
      const getComponent = (id)=>{
