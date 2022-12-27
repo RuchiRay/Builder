@@ -1,8 +1,10 @@
 import React from "react";
 import { useDroppable } from "@dnd-kit/core";
 import GridLayout from "react-grid-layout";
-
+import { useGlobalContext } from '../Context';
 export const Droppable = ({ dropped }) => {
+  const {arrangement,setArrangement} = useGlobalContext();
+  console.log('arranhge',arrangement);
   console.log(dropped);
   const { isOver, setNodeRef } = useDroppable({
     id: "droppable",
@@ -12,8 +14,8 @@ export const Droppable = ({ dropped }) => {
   };
 
   const handleLayoutChange = (layout, layouts) => {
-    localStorage.setItem("grid-layout", JSON.stringify(layouts));
-    console.log(layout);
+    localStorage.setItem("grid-layout", JSON.stringify(layout));
+    console.log(layouts);
   };
 
 

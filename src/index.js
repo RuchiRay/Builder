@@ -9,7 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { View } from "./component/View";
-
+import { AppProvider } from "./Context";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -21,6 +21,8 @@ const router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <AppProvider>
       <RouterProvider router={router} />
+    </AppProvider>
   </React.StrictMode>
 );
