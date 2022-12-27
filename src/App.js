@@ -9,6 +9,7 @@ import line from "./images/line.png";
 import area from "./images/area.png";
 import { Sidebar } from "./component/Sidebar";
 import { Main } from "./component/Main";
+import { Link } from "react-router-dom";
 function App() {
   const [activeId, setActiveId] = useState(null);
   const [components, setComponents] = useState([
@@ -19,12 +20,10 @@ function App() {
   ]);
  const [dropped, setDropped] = useState([])
   function handleDragStart(event) {
-    console.log("on drag start");
     setActiveId(event.active.id);
   }
 
   function handleDragEnd(event) {
-    console.log("on drag end",event);
     setActiveId(null);
     if(event.over!==null)
     handleDropped(event.active.id)
@@ -46,12 +45,15 @@ function App() {
       <div className="flex text-cyan-100">
         <Sidebar  activeId={activeId} components={components} />
         <div className="bg-cyan-100 w-full ">
-          <div className="w-full sticky top-0 bg-white py-2 pr-12 h-20 flex items-center justify-end">
-            <button className="px-8 pt-3 pb-4 bg-cyan-200 text-xl rounded-md">
+          <div className="w-full sticky z-10 shadow-lg top-0 bg-white py-2 pr-12 h-20 flex items-center justify-end">
+            <button className="px-8 pt-2 pb-3 bg-cyan-200 text-xl rounded-md">
               Save
             </button>
+            <Link  to='view' className="px-8 ml-6 pt-[5px] pb-[9px] bg-cyan-100 text-cyan-200 border-2 border-cyan-200 text-xl rounded-md">
+              View
+            </Link>
           </div>
-          <Main dropped={dropped} />
+          <Droppable dropped={dropped} />
         </div>
       </div>
     </DndContext>

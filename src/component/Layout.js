@@ -13,7 +13,7 @@ export const Layout = () => {
   };
 
   return (
-    <div className="flex ">
+    <div className="flex">
       <GridLayout
         className="layout w-96"
         layout={layout}
