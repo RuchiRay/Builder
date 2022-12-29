@@ -57,7 +57,7 @@ export const data = {
 
 export const LineChart = ()=> {
   return (
-    <div className="w-full h-full">
+    <div className="w-full bg-white h-full">
       <Line options={options} data={data} />
     </div>
   )
